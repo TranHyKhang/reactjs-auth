@@ -125,7 +125,7 @@ export default function EntryPage() {
                 </li>
                 <li>
                   <i/>
-                  <a 
+                  <button 
                     style={{cursor: 'pointer'}} 
                     onClick={() => {
                       console.log(authCookies)
@@ -133,11 +133,11 @@ export default function EntryPage() {
                       getUsers();
                       setCount(prev => prev + 1)
                     }} 
-                  >Get user</a>
+                  >Get user</button>
                 </li>
               </ul>                               
             </fieldset>
-            <a
+            <button
               onClick={() => {
                 loginSubmitForm({
                   variables: {
@@ -151,7 +151,7 @@ export default function EntryPage() {
               }}
             >
                 Login
-            </a>
+            </button>
             <button 
                 type="button" 
                 onClick={ () => {
