@@ -1,13 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import {ApolloClient, ApolloProvider, InMemoryCache} from '@apollo/client';
+import EntryPage from './pages/AuthPage/AuthPage'
+
+ //Apollo client setup
+const client = new ApolloClient({
+  uri: 'http://localhost:4000/graphql',
+  cache: new InMemoryCache()
+})
+
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ApolloProvider client={client}>
+      <React.StrictMode>
+        <EntryPage />
+      </React.StrictMode>
+    </ApolloProvider>
+  
+  ,
   document.getElementById('root')
 );
 
